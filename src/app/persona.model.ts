@@ -11,6 +11,7 @@ export class Persona { //NOTE export sirve para que podamos usar la clase en otr
   // NOTE PRUEBA 2
   // NOTE PRUEBA 3
   // NOTE PRUEBA 5
+  // NOTE PRUEBA 6
 
   constructor(public nombre: string, public apellido: string) { } //NOTE al añadir public estamos creando los atributos y asignando los valores desde este constructor
 
