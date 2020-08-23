@@ -6,7 +6,7 @@ import { Persona } from './persona.model';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
 })
-export class AppComponent {
+export class AppComponent { // NOTE export se usa para que la clase pueda ser usada desde otros sitios
   title = 'Listado de Personas';
   personas: Persona[] = [
     new Persona('Juan', 'Perez'),
