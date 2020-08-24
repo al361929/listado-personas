@@ -1,5 +1,5 @@
 import { Persona } from './../persona.model';
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter, ViewChild, ElementRef } from '@angular/core';
 
 @Component({
   selector: 'app-formulario',
@@ -13,6 +13,9 @@ export class FormularioComponent implements OnInit {
   //apellidoInput:string;
   // NOTE Se comenta porque hemos pasado a utilizar variables locales del modelo html
 
+  @ViewChild('nombreInput') nombreInput: ElementRef;
+  @ViewChild('apellidoInput') apellidoInput: ElementRef;
+
   constructor() {
 
   }
@@ -20,8 +23,8 @@ export class FormularioComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  onAgregarPersona(nombreInput:HTMLInputElement, apellidoInput:HTMLInputElement){ // NOTE Como utilizamos una variable local en el modelo, lo que se le pasa al método es un objeto de tipo HTMLInputElement
-    let persona1 = new Persona(nombreInput.value, apellidoInput.value); // NOTE Mediante el atributo value obtenemos el valor de la variable
+  onAgregarPersona(){ // NOTE Como utilizamos una variable local en el modelo, lo que se le pasa al método es un objeto de tipo HTMLInputElement
+    let persona1 = new Persona(this.nombreInput.nativeElement.value, this.apellidoInput.nativeElement.value); // NOTE Mediante el atributo value obtenemos el valor de la variable
     this.personaCreada.emit(persona1);
   }
 
