@@ -12,11 +12,8 @@ export class AppComponent { // NOTE export se usa para que la clase pueda ser us
     new Persona('Juan', 'Perez'),
     new Persona('Laura', 'Juarez'),
   ];
-  nombreInput:string;
-  apellidoInput:string;
 
-  onAgregarPersona(){
-    let persona1 = new Persona(this.nombreInput, this.apellidoInput);
-    this.personas.push(persona1);
+  onPersonaAgregada(persona:Persona){
+    this.personas.push(persona);
   }
 }
